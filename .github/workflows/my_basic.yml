@@ -10,5 +10,13 @@ jobs:
      runs-on:  ubuntu-latest
      
      steps:
-       - name: Print Hello Message
-         run: echo "Hello World"
+       - name: Print Hello Message from Testing
+         run: echo "Hello World form Testing"
+   
+   my_deploy:
+     runs-on:  ubuntu-latest
+     needs: [my_testing]
+     
+     steps:
+       - name: Print Hello Message from deploy
+         run: echo "Hello World from Deploy"
